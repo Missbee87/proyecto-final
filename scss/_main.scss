@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #181818;
+  color: #fff;
+  font-wight: map-get($miMap, regular);
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 1rem;
+}
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 black;
+  min-height: 100px;
+  a{
+    &:hover {
+    color: black;
+    }
+  }
+}
+#banner {
+  min-width: 400px;
+  height: 50vh;
+  position: relative;
+  z-index: 2;
+  &::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(310deg, #7928ca, #ff0080);
+  opacity: .8;
+  z-index: -1;
+  }
+}
+.conteiner{
+  display: grid;
+  grid-template-areas: 
+  "boxuno"
+  "boxdos"
+  "boxtres";/**/
+  grid-gap: 2rem;
+  min-height: 80vh;
+  width: 100%;/**/
+  margin: auto;
+}
+.boxuno{
+  grid-area: boxuno;
+}
+.boxuno{
+
+}
+.boxdos{
+  grid-area: boxdos;
+}
+.boxtres{
+  grid-area: boxtres;
+}
+
+.boxuno, .boxdos, .boxtres{
+  padding: 1.8rem
+}
+.bgColorPink{
+  background: cover;
+  background-color: pink;
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+}
+.borders{
+  border:2px solid;
+  border-color: pink;
+  border-radius: 1.5rem;
+}
+.boxuno p{
+  text-align: center;
+}
+.boxtres a{
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #d63031;
+    color: #fff;
+    
+
+}
+.boxtres a:hover{
+  background-color: yellow;
+}
+.boxtres {
+  
+  text-align: center;
+  
+}
+.boxtres ul{
+  list-style: none;
+}
+.scale:hover{
+  transform: scale(1.1);
+  transition: all 200ms ease-in-out;
+}
+/** modal **/
+.modal-title {
+  color: black;
+}
+.modal-body{
+  color: black;
+}
+/** servicios **/
+.cont {
+  background-image: linear-gradient(to top right, #B066FE, #63E2FF);
+}
+.uno:hover{
+  transform: scale(1.1);
+  transition: all 200ms ease-in-out;
+}
+.dos {
+  &:hover{
+  transform: scale(1.1);
+  transition: all 200ms ease-in-out;
+  }
+}
+.tres:hover{
+  transform: scale(1.1);
+  transition: all 200ms ease-in-out;
+}
+.MyTexts {
+  font-size: 1.25rem;
+  padding: 2 1em;
+  padding-bottom: 1.5em;
+  @media all and (max-width: $point-md) {
+    font-size: 1rem;
+    }
+  }
+.myTitles {
+  font-size: 3rem;
+  padding: 0 1em;
+  padding-bottom: 1.5em;
+  @media all and (max-width: $point-md) {
+  font-size: 1.5rem;
+    }
+}
+
+/** quienes somos **/
+.boxTres {
+  padding: 30px;
+  text-align: center;
+  ul {
+  list-style: none;
+}
+  a {
+  @extend .boxTres;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #d63031;
+  color: $mainColor;
+}
+}
+.container{
+  height: auto;
+  .row{
+    @media all and (min-width: $point-xl){
+      height: 100px;
+    }
+  }
+}
+.container-fluid {
+  background-color: rgba(0,0,255,.1);
+}
+
+
+/** capacitaciones **/
+#container-fluid{
+  background-color: pink;
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+}
+/** Contacto **/
+.container-md {
+  background: #222222;
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+}
+@each $k, $v in $miMap{
+  .font-weight-#{$k}{
+    font-weight: $v;
+  }
+}
+
+@mixin sizes($widht,$height){
+  height: $height;
+  width: $widht;
+}
+.box{
+  @extend .container-md;
+  @include sizes(100%, 100%);
+}
